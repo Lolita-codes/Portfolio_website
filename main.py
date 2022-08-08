@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, send_from_directory
 import smtplib, ssl
 from flask_wtf import FlaskForm
 from wtforms import StringField, TextAreaField, SubmitField, validators
@@ -44,6 +44,12 @@ def home():
 @app.route('/resume')
 def check_resume():
     return render_template('resume.html')
+
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                               'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 
 if __name__ == '__main__':
