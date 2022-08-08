@@ -5,7 +5,7 @@ body {
 }
 
 .title-text {
-    margin: 0 25% 0 32%;
+    margin: 5% 25% 0 32%;
 }
 
 h1 {
@@ -23,7 +23,7 @@ h1 {
 }
 
 .sticky-top {
-    background-color:
+    background-color: #32325d;
 }
 
 .navbar-brand {
@@ -37,7 +37,6 @@ h1 {
     font-size: 1.5rem;
     font-weight: bold;
     color: #daa7d1;
-    position: relative;
     bottom: 68px;
     left: 30px;
 }
@@ -46,10 +45,18 @@ h1 {
     color: #e14eca;
 }
 
+.nav-link {
+    margin: 10px 20px;
+}
+
 .top-container {
   background-color: #32325d;
   position: relative;
   padding-top: 20px;
+}
+
+.control-label, #submit {
+    color: #e14eca;
 }
 
 .resume {
