@@ -8,6 +8,7 @@ import os
 from dotenv import load_dotenv
 load_dotenv('.env')
 import email_validator
+import fcntl
 
 app = Flask(__name__)
 app.config['APP_SECRET_KEY'] = os.environ.get('APP_SECRET_KEY')
