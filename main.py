@@ -46,7 +46,7 @@ def check_resume():
     return render_template('resume.html')
 
 
-@app.route('./favicon.ico')
+@app.route('/favicon.ico')
 def favicon():
     return send_from_directory(os.path.join(app.root_path, 'static'),
                                'favicon.ico', mimetype='image/vnd.microsoft.icon')
