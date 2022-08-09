@@ -4,3 +4,4 @@ python-dotenv~=0.20.0
 email-validator~=1.2.1
 gunicorn~=20.1.0
 Flask-WTF~=1.0.1
+Flask-Bootstrap~=3.3.7.1
