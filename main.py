@@ -32,8 +32,8 @@ def home():
         with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as connection:
             connection.login(user=os.environ['EMAIL'], password=os.environ['PASSWORD'])
             connection.sendmail(
-                from_addr=os.environ['email'],
-                to_addrs=os.environ['email'],
+                from_addr=os.environ['EMAIL'],
+                to_addrs=os.environ['TO_EMAIL'],
                 msg=f"Subject: New Message\n\nName: {contact_form.name.data}\nEmail address: {contact_form.email.data}\nMessage: {contact_form.message.data}"
             )
         return render_template('index.html', form=contact_form)
