@@ -1,4 +1,4 @@
-from flask import Flask, render_template, send_from_directory
+from flask import Flask, render_template, send_from_directory, flash, redirect, url_for
 import smtplib, ssl
 from flask_wtf import FlaskForm
 from wtforms import StringField, TextAreaField, SubmitField, validators
@@ -8,7 +8,6 @@ import os
 from dotenv import load_dotenv
 load_dotenv('.env')
 import email_validator
-import fcntl
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
@@ -36,7 +35,8 @@ def home():
                 to_addrs=os.environ['TO_EMAIL'],
                 msg=f"Subject: New Message\n\nName: {contact_form.name.data}\nEmail address: {contact_form.email.data}\nMessage: {contact_form.message.data}"
             )
-        return render_template('index.html', form=contact_form)
+        flash('Thank you for reaching out. I will reply soon')
+        return redirect(url_for('home'))
     else:
         return render_template('index.html', form=contact_form)
 

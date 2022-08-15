@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lola's Portfolio</title>
 <!--  Bootstrap-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -56,7 +57,7 @@
         </div>
         </nav>
       </div>
-      <div class="row">
+      <div class="row col">
         <div class="title-text align-content-center">
           <h1 class="big-heading">I'm Omolola</h1>
           <h2>An aspiring back-end developer</h2>
@@ -76,7 +77,7 @@
     <img src="static/lolaaa2.png" alt="Lola's picture"/>
     <p>I am a final year pharmacy student with problem-solving and logical reasoning abilities.</p>
     <p>I am also a goal-oriented, diligent and collaborative hardworking person with a willingness and passion to learn, grow and excel in the technology Industry.</p>
-    <p>When I am not learning to save lives, perfect my skills or work on improving myself; </p>
+    <p>When I am not learning to save lives, perfecting my skills or working on improving myself; </p>
     <p>I enjoy listening to music, binge-watching shows and trying new recipes. </p>
     <i class="fa-solid fa-heart"></i>
   </section>
@@ -105,8 +106,8 @@
             <p class="summary">An application that collects data that fit a particular criteria for clients, compute the data and transfers needed data into a form to create spreadsheets<br><b>Technology Stack - </b> Python, BeautifulSoup, Selenium Webdriver, Google Forms, and Google Sheets</p>
         </div>
         <div class="carousel-item">
-           <h3 class="title"><a href="https://github.com/Lolita-codes?tab=repositories">Lola's Blog</a> </h3>
-            <p class="summary">A published fully-fledged blog website.<b> <br>Technology Stack -</b> Python, PostgreSQL, HTML, CSS, Bootstrap, Flask, WTForms, Requests, JSON, APIs, Git, GitHub, Heroku, gunicorn</p>
+           <h3 class="title"><a href="https://github.com/Lolita-codes/Lola_RESTful_blog">Lola's Blog</a> </h3>
+            <p class="summary">A published fully-fledged blog website.<b> <br>Technology Stack -</b> Python, PostgreSQL, HTML, CSS, Bootstrap, Flask, WTForms, Git, GitHub, Heroku, gunicorn</p>
         </div>
         <div class="carousel-item">
           <h3 class="title"><a href="https://github.com/Lolita-codes?tab=repositories">API Integration</a> </h3>
@@ -132,12 +133,14 @@
 
   <section class="fifth-container align-content-center" id="contact">
       <h1>Contact Me</h1>
-      {% if request.method == 'GET' %}-->
+      {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            {% for message in messages %}
+              <p>{{ message }}</p>
+            {% endfor %}
+          {% endif %}
+      {% endwith %}
         <p>{{ wtf.quick_form(form) }}</p>
-      {% else %}
-        <p>Thank you. I will reply soon</p>
-        <a href="{{ url_for('home') }}">Reload page</a>
-      {% endif %}
   </section>
 
   <footer id="footer">

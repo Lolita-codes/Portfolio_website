@@ -125,8 +125,9 @@ img {
     height: 20rem;
 }
 
-@media (max-width: 900px) {
-.carousel-inner {height: 28rem;}
+@media (max-width: 500px) {
+.carousel-inner {height: 28rem; width: 150%; position: relative; right:70px;}
+.title-text {position: relative; right: 50px;}
 }
 
 .summary {
